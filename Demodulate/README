@@ -1,0 +1,7 @@
+Digital Down Conversion and Baseband Filtering (75 pts)
+Download HW2.mat from Canvas and load data using ‘load HW2.mat’ in Matlab. Vector
+‘sig_modulated_fixed’ contains the fixed point signal (i.e. mantissa values) of modulated human speech.
+‘demod_Lo’ is the fixed point local oscillator signal (mantissa) to be used for demodulation. Both
+‘sig_modulated_fixed’ and ‘demod_Lo’ are quantized with signed fixed point representation (10,9). Note
+that these vectors are complex valued. ‘my_LPF’ stores the real-valued filter (LPF) coefficients which are
+in floating point (not fixed point quantized).
