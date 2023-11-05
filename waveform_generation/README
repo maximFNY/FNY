@@ -1,0 +1,27 @@
+Design a digital frequency synthesis logic in Verilog. The following diagram specifies the interface of the
+block. Use a sine lookup table (LUT) with 512 entries that stores sin(𝜃!) for 𝑘 = 0,1,…, 511 and 𝜃! =
+𝑘2𝜋/512 for the phase in the range of (0, 2𝜋). sin(𝜃!) values stored in the LUT should be fixed point
+quantized in (10,9) representation (i.e., mantissa values are stored in the LUT). Note that the maximum
+positive value you can represent in this format is slightly less than 1.0. So you will need to saturate the
+sin(𝜋/2) to the maximum allowed mantissa value before storing it in the LUT.
+
+Signal p is an unsigned 13-bit integer to control the logic to produce a sine and cosine waveform with a
+desired frequency. Note that because sine and cosine have a certain phase relationship (the cosine
+waveform is 90-degree phase shifted version of the sine waveform), you can share the sine LUT to
+generate the cosine output for the same time index. Internal design of the logic is up to you as long as it
+is synthesizable (e.g., you can’t use ‘real’ type variables / signal in the logic). But you design should have
+only a sine LUT, not a separate cosine LUT. Run your logic with a 10MHz clk.
+
+a) Write a testbench for ‘my_waveform_gen’ to show in simulation that your logic can generate
+sine and cosine waveforms with the target frequency of 1) 1.72 MHz, 2) 0.93 MHz, and 3) 0.27
+MHz by providing a proper p input. Make the generated frequency as close as possible to the
+target. Note that the proper value of p for each frequency depends on your internal design.
+Explain with a mathematical expression the relationship between p value and the actual
+generated frequency of your design in the homework report. Show the simulation waveform
+capture plots showing both sine and cosine to prove that you obtained the (close-to) desired
+frequency.
+
+b) Design ‘my_controller’ to produce a modulated output signal that alternates the frequency
+between 1.72 MHz and 0.27 MHz with a period given by the input ‘period’, which is an 8 bit
+unsigned integer. period = k means that the period is k us. Show that your controller work with a
+period of 8 us (i.e., 1.72 MHz for 4 us and 0.27 MHz for 4 us, and then repeat) and 13 us period.
