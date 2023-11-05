@@ -1,0 +1,13 @@
+CORDIC for instantaneous frequency estimation
+Download hw3_prob1.mat from Canvas and load data using ‘load hw3_prob1.mat’ in Matlab. Vectors
+‘x_re’ and ‘x_im’ contain integer mantissa values in the fixed point representation of (12,10). The input
+is complex valued (‘x_re’ is the real part and ‘x_im’ is the imaginary part) and captured at the sampling
+frequency 𝐹! = 500kHz. Use this input for the RTL simulation of the CORDIC design described below.
+Design a pipelined CORDIC RTL with 12-iteration stages. The designed CORDIC should have >= 4 pipeline
+stages such that the output is available >=4 cycles after the clock edge when the input is fed to the
+CORDIC. Feel free to choose a number of pipeline stages (>=4) for your design but it should be able to
+take a new complex-valued input sample and produce a new output at every clock edge at 𝐹! = 𝐹"#$ =
+500kHz.
+Note that the CORDIC has a limited maximum angle for rotation and vectoring. You need to design a
+glue logic before and after the CORDIC as shown in the diagram below to make sure that the input to
+the CORDIC is within the allowable angle range.
