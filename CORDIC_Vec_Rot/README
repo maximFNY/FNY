@@ -1,0 +1,4 @@
+CORDIC LOOPBACK
+Using the CORDIC that you designed for Problem 1, implement the following datapath. The goal is to
+obtain x_re_out and x_im_out that are very close to the input x_re and x_im. Glue logics in the diagram
+are necessary to ensure that CORDIC operates within the valid maximum angle range.
